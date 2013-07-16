@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "vagrant-librarian-puppet"
   spec.version       = VagrantPlugins::LibrarianPuppet::VERSION
   spec.authors       = ["Michael Hahn"]
-  spec.email         = ["mhahn@eventbrite.com"]
+  spec.email         = ["mwhahn@gmail.com"]
   spec.description   = %q{A Vagrant plugin to install Puppet modules using Librarian-Puppet.}
   spec.summary       = %q{A Vagrant plugin to install Puppet modules using Librarian-Puppet.}
 # XXX update this url

@@ -1,0 +1,6 @@
+# Manage Puppet module dependencies with librarian-puppet
+
+forge 'http://forge.puppetlabs.com'
+
+mod 'supervisor',
+  :git => 'git://github.com/eventbrite/puppet-supervisor.git'

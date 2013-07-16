@@ -1,4 +1,4 @@
-# vagrant-librarian-puppet
+# vagrant-librarian-puppet-plugin
 
 A [Vagrant](http://www.vagrantup.com/) plugin to install
 [Puppet](http://docs.puppetlabs.com/#puppetpuppet) modules using
@@ -11,7 +11,7 @@ A [Vagrant](http://www.vagrantup.com/) plugin to install
 ## Installation
 
 ``` bash
-vagrant plugin install vagrant-librarian-puppet
+vagrant plugin install vagrant-librarian-puppet-plugin
 ```
 
 ## Usage

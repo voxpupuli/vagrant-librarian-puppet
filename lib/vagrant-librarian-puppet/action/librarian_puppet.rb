@@ -7,6 +7,7 @@ module VagrantPlugins
       class Install
         def initialize(app, env)
           @app = app
+          @env = env
           # Config#finalize! SHOULD be called automatically
           env[:global_config].librarian_puppet.finalize!
         end
@@ -14,7 +15,7 @@ module VagrantPlugins
         def call(env)
           config = env[:global_config].librarian_puppet
           if
-            env[:provision_enabled] &&
+            provisioned? and
             File.exist? File.join(env[:root_path], config.puppetfile_path)
 
             env[:ui].info "Installing Puppet modules with Librarian-Puppet..."
@@ -27,6 +28,11 @@ module VagrantPlugins
           end
           @app.call(env)
         end
+
+        def provisioned?
+          @env[:provision_enabled].nil? ? true : @env[:provision_enabled]
+        end
+
       end
     end
   end

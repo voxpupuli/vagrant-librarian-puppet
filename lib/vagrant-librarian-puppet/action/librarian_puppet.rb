@@ -13,8 +13,10 @@ module VagrantPlugins
 
         def call(env)
           config = env[:global_config].librarian_puppet
-          # look for a Puppetfile in the configured puppetfile_dir
-          if FileTest.exist? File.join(env[:root_path], config.puppetfile_path)
+          if
+            env[:provision_enabled] &&
+            File.exist? File.join(env[:root_path], config.puppetfile_path)
+
             env[:ui].info "Installing Puppet modules with Librarian-Puppet..."
             environment = Librarian::Puppet::Environment.new({
               :project_path => File.join(env[:root_path], config.librarian_dir)

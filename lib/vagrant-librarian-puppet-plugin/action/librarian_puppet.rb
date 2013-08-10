@@ -20,7 +20,7 @@ module VagrantPlugins
 
             env[:ui].info "Installing Puppet modules with Librarian-Puppet..."
             environment = Librarian::Puppet::Environment.new({
-              :project_path => File.join(env[:root_path], config.librarian_dir)
+              :project_path => File.join(env[:root_path], config.puppetfile_dir)
             })
             Librarian::Action::Ensure.new(environment).run
             Librarian::Action::Resolve.new(environment).run

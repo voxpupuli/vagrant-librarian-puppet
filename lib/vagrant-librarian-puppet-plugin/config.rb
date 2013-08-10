@@ -1,18 +1,18 @@
 module VagrantPlugins
   module LibrarianPuppet
     class Config < Vagrant.plugin(2, :config)
-      attr_accessor :librarian_dir
+      attr_accessor :puppetfile_dir
 
       def initialize
-        @librarian_dir = UNSET_VALUE
+        @puppetfile_dir = UNSET_VALUE
       end
 
       def finalize!
-        @librarian_dir = "." if @librarian_dir == UNSET_VALUE
+        @puppetfile_dir = '.' if @puppetfile_dir == UNSET_VALUE
       end
 
       def puppetfile_path
-        @puppetfile_path ||= @librarian_dir ? File.join(@librarian_dir, 'Puppetfile') : 'Puppetfile'
+        @puppetfile_path ||= @puppetfile_dir ? File.join(@puppetfile_dir, 'Puppetfile') : 'Puppetfile'
       end
 
     end

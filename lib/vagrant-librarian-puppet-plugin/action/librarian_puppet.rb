@@ -27,6 +27,19 @@ module VagrantPlugins
             bin_path = env[:gems_path].join('bin')
             ENV['PATH'] = "#{bin_path}#{::File::PATH_SEPARATOR}#{ENV['PATH']}"
 
+            # Determine if we need to persist placeholder file
+            placeholder_file = File.join(
+              env[:root_path],
+              config.puppetfile_dir,
+              'modules',
+              config.placeholder_filename
+            )
+            if File.exist? placeholder_file
+              placeholder_contents = File.read(placeholder_file)
+            else
+              placeholder_contents = nil
+            end
+
             environment = Librarian::Puppet::Environment.new({
               :project_path => File.join(env[:root_path], config.puppetfile_dir)
             })
@@ -36,6 +49,14 @@ module VagrantPlugins
 
             # Restore the original path
             ENV['PATH'] = original_path
+
+            # Persist placeholder if necessary
+            if placeholder_contents != nil
+              File.open(placeholder_file, 'w') { |file|
+                file.write(placeholder_contents)
+              }
+            end
+
           end
           @app.call(env)
         end

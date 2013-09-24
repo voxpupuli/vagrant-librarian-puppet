@@ -19,12 +19,23 @@ module VagrantPlugins
             File.exist? File.join(env[:root_path], config.puppetfile_path)
 
             env[:ui].info "Installing Puppet modules with Librarian-Puppet..."
+
+            # NB: Librarian::Puppet::Environment calls `which puppet` so we
+            # need to make sure VAGRANT_HOME/gems/bin has been added to the
+            # path.
+            original_path = ENV['PATH']
+            bin_path = env[:gems_path].join('bin')
+            ENV['PATH'] = "#{bin_path}#{::File::PATH_SEPARATOR}#{ENV['PATH']}"
+
             environment = Librarian::Puppet::Environment.new({
               :project_path => File.join(env[:root_path], config.puppetfile_dir)
             })
             Librarian::Action::Ensure.new(environment).run
             Librarian::Action::Resolve.new(environment).run
             Librarian::Action::Install.new(environment).run
+
+            # Restore the original path
+            ENV['PATH'] = original_path
           end
           @app.call(env)
         end

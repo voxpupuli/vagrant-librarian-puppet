@@ -1,4 +1,4 @@
-# vagrant-librarian-puppet-plugin
+# vagrant-librarian-puppet
 
 A [Vagrant](http://www.vagrantup.com/) plugin to install
 [Puppet](http://docs.puppetlabs.com/#puppetpuppet) modules using
@@ -11,7 +11,7 @@ A [Vagrant](http://www.vagrantup.com/) plugin to install
 ## Installation
 
 ``` bash
-vagrant plugin install vagrant-librarian-puppet-plugin
+vagrant plugin install vagrant-librarian-puppet
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ bundle exec vagrant up
 
 ## Acknowledgements
 
-Thanks be to @jimmycuadra and other contributors for their work on
+Thanks to @jimmycuadra and other contributors for their work on
 [vagrant-librarian-chef](https://github.com/jimmycuadra/vagrant-librarian-chef).
 This plugin made some slight changes to work with puppet, but largely just used
 their code.

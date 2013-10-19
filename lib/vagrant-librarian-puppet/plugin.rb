@@ -1,16 +1,16 @@
 begin
   require "vagrant"
 rescue LoadError
-  abort "vagrant-librarian-puppet-plugin must be loaded in a Vagrant environment."
+  abort "vagrant-librarian-puppet must be loaded in a Vagrant environment."
 end
 
-require "vagrant-librarian-puppet-plugin/action/librarian_puppet"
+require "vagrant-librarian-puppet/action/librarian_puppet"
 
 
 module VagrantPlugins
   module LibrarianPuppet
     class Plugin < Vagrant.plugin("2")
-      name "vagrant-librarian-puppet-plugin"
+      name "vagrant-librarian-puppet"
       description <<-DESC
 A Vagrant plugin to install Puppet modules using Librarian-Puppet.
 DESC

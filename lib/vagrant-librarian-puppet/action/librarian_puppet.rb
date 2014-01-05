@@ -44,7 +44,7 @@ module VagrantPlugins
               :project_path => File.join(env[:root_path], config.puppetfile_dir)
             })
             Librarian::Action::Ensure.new(environment).run
-            Librarian::Action::Resolve.new(environment).run
+            Librarian::Action::Resolve.new(environment, config.resolve_options).run
             Librarian::Action::Install.new(environment).run
 
             # Restore the original path

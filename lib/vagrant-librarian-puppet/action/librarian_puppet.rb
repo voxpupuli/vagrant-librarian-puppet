@@ -9,11 +9,11 @@ module VagrantPlugins
           @app = app
           @env = env
           # Config#finalize! SHOULD be called automatically
-          env[:global_config].librarian_puppet.finalize!
+          env[:machine].config.librarian_puppet.finalize!
         end
 
         def call(env)
-          config = env[:global_config].librarian_puppet
+          config = env[:machine].config.librarian_puppet
           if
             provisioned? and
             File.exist? File.join(env[:root_path], config.puppetfile_path)

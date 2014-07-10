@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
   config.librarian_puppet.placeholder_filename = ".MYPLACEHOLDER"
 
   config.vm.provision :puppet do |puppet|
-    puppet.modules = "puppet/modules"
+    puppet.module_path = "puppet/modules"
 
     ...
 

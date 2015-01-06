@@ -1,5 +1,6 @@
 require 'librarian/puppet'
 require 'librarian/action'
+require "librarian/puppet/action/install"
 
 module VagrantPlugins
   module LibrarianPuppet
@@ -43,9 +44,12 @@ module VagrantPlugins
             environment = Librarian::Puppet::Environment.new({
               :project_path => File.join(env[:root_path], config.puppetfile_dir)
             })
+            environment.config_db.local['destructive']  = config.destructive.to_s
+            environment.config_db.local['use-v1-api']   = config.use_v1_api
+
             Librarian::Action::Ensure.new(environment).run
             Librarian::Action::Resolve.new(environment, config.resolve_options).run
-            Librarian::Action::Install.new(environment).run
+            Librarian::Puppet::Action::Install.new(environment).run
 
             # Restore the original path
             ENV['PATH'] = original_path

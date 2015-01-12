@@ -31,8 +31,8 @@ module VagrantPlugins
         return { 'vagrant-librarian-puppet' => errors }
       end
 
-      def puppetfile_path
-        @puppetfile_path ||= @puppetfile_dir ? File.join(@puppetfile_dir, 'Puppetfile') : 'Puppetfile'
+      def puppetfile_path(puppetfile_dir)
+        @puppetfile_path ||= puppetfile_dir ? File.join(puppetfile_dir, 'Puppetfile') : 'Puppetfile'
       end
 
       def use_v1_api

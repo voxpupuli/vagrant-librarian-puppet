@@ -4,7 +4,7 @@ gemspec
 
 group :development do
   gem "vagrant", github: "mitchellh/vagrant"
-  gem "debugger"
+  gem "byebug"
 end
 
 group :plugins do

@@ -24,6 +24,11 @@ using the `librarian_puppet.puppetfile_dir` config key.  Please keep in mind
 that you will need to explicitly set the `modules` path in the
 `:puppet` provisioner and this path must exist before running vagrant commands.
 
+Like the `puppet.module_path`, `librarian_puppet.puppetfile_dir` supports both,
+a simple String or an Array of Strings. Librarian Puppet will look for Puppetfiles
+in each Directory and manage each modules directory.
+
+
 **NOTE:** Since the puppet provisioner will fail if the path provided to
 "puppet.modules" doesn't exist and librarian-puppet will destroy and recreate
 the modules directory on each run, this plugin supports a placeholder file

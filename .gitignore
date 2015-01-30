@@ -19,3 +19,5 @@ Puppetfile.lock
 modules
 .vagrant
 .tmp
+puppet/
+puppet_custom/

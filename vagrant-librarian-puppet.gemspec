@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "librarian-puppet", "~> 2.0.1"
+  spec.add_runtime_dependency "librarian-puppet", "~> 2.2.1"
   # puppet_forge (all versions up to this date) have a dep on her ~> 0.6,
   # her >= 0.7.3 pulls in activemodel 4.2,
   # which pulls in i18n ~> 0.7,

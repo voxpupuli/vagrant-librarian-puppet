@@ -1,12 +1,12 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec
 
 group :development do
-  gem "vagrant", github: "mitchellh/vagrant", ref: "v1.7.4"
-  gem "byebug"
+  gem 'vagrant', github: 'mitchellh/vagrant', ref: 'v1.8.1'
+  gem 'byebug'
 end
 
 group :plugins do
-  gem "vagrant-librarian-puppet", path: "."
+  gem 'vagrant-librarian-puppet', path: '.'
 end

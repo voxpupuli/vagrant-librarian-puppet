@@ -19,14 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "librarian-puppet", "~> 2.2.1"
-  # puppet_forge (all versions up to this date) have a dep on her ~> 0.6,
-  # her >= 0.7.3 pulls in activemodel 4.2,
-  # which pulls in i18n ~> 0.7,
-  # which is incompatible with vagrant 1.7.2 due to a hard dep on i18n 0.6.11.
-  #
-  # it's a bit surprising that bundler can't resolve this itself...
-  spec.add_runtime_dependency "her", "< 0.7.3"
-  spec.add_runtime_dependency "puppet", "~> 3.4.3"
+  # vagrant 1.8.x vendors ruby 2.2.x which requires puppet >= 4
+  spec.add_runtime_dependency "puppet", "~> 4.3.2"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"

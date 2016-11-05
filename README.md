@@ -1,7 +1,7 @@
 # vagrant-librarian-puppet
 
-A [Vagrant](http://www.vagrantup.com/) plugin to install
-[Puppet](http://docs.puppetlabs.com/#puppetpuppet) modules using
+A [Vagrant](https://www.vagrantup.com/) plugin to install
+[Puppet](https://docs.puppetlabs.com/#puppetpuppet) modules using
 [Librarian-Puppet](https://github.com/voxpupuli/librarian-puppet).
 
 ## Requirements

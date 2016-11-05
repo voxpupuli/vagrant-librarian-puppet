@@ -2,7 +2,7 @@
 
 A [Vagrant](http://www.vagrantup.com/) plugin to install
 [Puppet](http://docs.puppetlabs.com/#puppetpuppet) modules using
-[Librarian-Puppet](https://github.com/rodjek/librarian-puppet).
+[Librarian-Puppet](https://github.com/voxpupuli/librarian-puppet).
 
 ## Requirements
 
@@ -41,8 +41,8 @@ Vagrant.configure("2") do |config|
   config.librarian_puppet.puppetfile_dir = "puppet"
   # placeholder_filename defaults to .PLACEHOLDER
   config.librarian_puppet.placeholder_filename = ".MYPLACEHOLDER"
-  config.librarian_puppet.use_v1_api  = '1' # Check https://github.com/rodjek/librarian-puppet#how-to-use
-  config.librarian_puppet.destructive = false # Check https://github.com/rodjek/librarian-puppet#how-to-use
+  config.librarian_puppet.use_v1_api  = '1' # Check https://github.com/voxpupuli/librarian-puppet#how-to-use
+  config.librarian_puppet.destructive = false # Check https://github.com/voxpupuli/librarian-puppet#how-to-use
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "puppet/modules"

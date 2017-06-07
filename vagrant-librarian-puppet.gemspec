@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "librarian-puppet", "~> 2.2.1"
   # vagrant 1.8.x vendors ruby 2.2.x which requires puppet >= 4
-  spec.add_runtime_dependency "puppet", "~> 4.3.2"
+  spec.add_runtime_dependency "puppet", "~> 4.10.1"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
